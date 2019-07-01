@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>GRAFFITEE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oxygen:400,700">
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
+    <script src="assets/js/htmlshot.js"></script>
+    <script src="assets/js/interact.js"></script>
+    <script src="assets/js/main.js"></script>
+</head>
+
+<body>
+    <div id="header"></div>
+    <br>
+    <div>
+		<p id="tagline2">
+			😉 Customize Your T-shirt 😉
+		</p>
+	</div>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="btn-group mx-auto mb-5">
+                <button type="button" class="btn btn-dark btn-width" onclick="showfront()">Front</button>
+                <button type="button" class="btn btn-dark btn-width" onclick="showback()">Back</button>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="row">
+            <div class="col-md-4 mx-auto">
+                <div class="row mb-3">
+                    <div class="btn-group mx-auto" id="imgtext">
+                        <button type="button" class="btn btn-dark btn-width" onclick="showimagetab()">Image</button>
+                        <button type="button" class="btn btn-dark btn-width" onclick="showtexttab()">Text</button>
+                    </div>
+                </div>
+                <div id="imagetab" class="row row-inner mx-auto">
+                    <div class="col-md-6 col-4 mt-1 mb-1">
+                        <img class="imgthumb" ondblclick="addimg(this.src)" src="assets/images/cliparts/1.jpg">
+                    </div>
+                    <div class="col-md-6 col-4 mt-1 mb-1">
+                        <img class="imgthumb" ondblclick="addimg(this.src)" src="assets/images/cliparts/2.jpg">
+                    </div>
+                    <div class="col-md-6 col-4 mt-1 mb-1">
+                        <img class="imgthumb" ondblclick="addimg(this.src)" src="assets/images/cliparts/3.png">
+                    </div>
+                    <div class="col-md-6 col-4 mt-1 mb-1">
+                        <img class="imgthumb" ondblclick="addimg(this.src)" src="assets/images/cliparts/4.jpg">
+                    </div>
+                    <div class="col-md-6 col-4 mt-1 mb-1">
+                        <img class="imgthumb" ondblclick="addimg(this.src)" src="assets/images/cliparts/5.jpg">
+                    </div>
+                    <div class="col-md-6 col-4 mt-1 mb-1">
+                        <img class="imgthumb" ondblclick="addimg(this.src)" src="assets/images/cliparts/6.png">
+                    </div>
+                    <div class="col-md-6 col-4 mt-1 mb-1">
+                        <img class="imgthumb" ondblclick="addimg(this.src)" src="assets/images/cliparts/7.jpg">
+                    </div>
+                    <div class="col-md-6 col-4 mt-1 mb-1">
+                        <img class="imgthumb" ondblclick="addimg(this.src)" src="assets/images/cliparts/8.png">
+                    </div>
+                    <div class="col-md-6 col-4 mt-1 mb-1">
+                        <img class="imgthumb" ondblclick="addimg(this.src)" src="assets/images/cliparts/9.jpg">
+                    </div>
+                    <div class="col-md-6 col-4 mt-1 mb-1">
+                        <img class="imgthumb" ondblclick="addimg(this.src)" src="assets/images/cliparts/10.jpg">
+                    </div>
+                    <div class="col-md-6 col-4 mt-1 mb-1">
+                        <img class="imgthumb" ondblclick="addimg(this.src)" src="assets/images/cliparts/11.jpg">
+                    </div>
+                    <div class="col-md-6 col-4 mt-1 mb-1">
+                        <img class="imgthumb" ondblclick="addimg(this.src)" src="assets/images/cliparts/12.jpg">
+                    </div>
+                    <div class="col-md-6 col-4 mt-1 mb-1">
+                        <img class="imgthumb" ondblclick="addimg(this.src)" src="assets/images/cliparts/13.jpg">
+                    </div>
+                    <div class="col-md-6 col-4 mt-1 mb-1">
+                        <img class="imgthumb" ondblclick="addimg(this.src)" src="assets/images/cliparts/14.jpg">
+                    </div>
+                    <div class="col-md-6 col-4 mt-1 mb-1">
+                        <img class="imgthumb" ondblclick="addimg(this.src)" src="assets/images/cliparts/15.png">
+                    </div>
+                    <div class="col-md-6 col-4 mt-1 mb-1">
+                        <img class="imgthumb" ondblclick="addimg(this.src)" src="assets/images/cliparts/16.jpg">
+                    </div>
+
+                </div>
+                <div id="texttab" style="display:none" class="row row-inner">
+                    <div class="col">
+                        <div class="form-group">
+                            <h5 for="customtext">Your Text:</h5>
+                            <input type="text" class="form-control" name="customtext" id="customtext">
+                        </div>
+                        <div class="form-group">
+                            <h5 for="font">Font:</h5>
+                            <select class="form-control" id="font">
+                                <option value="Arial">Arial</option>
+                                <option value="cursive">Cursive</option>
+                                <option value="Script MT">Script MT</option>
+                                <option value="Segoe Print">Segoe Print</option>
+                                <option value="Times New Roman">Times New Roman</option>
+                                <option value="Verdana">Verdana</option>
+
+                                
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <h5 for="color">Color:</h5>
+                            <select class="form-control" id="color">
+                                <option value="#000">Black</option>
+                                <option value="#fff">White</option>
+                                <option value="#f00">Red</option>
+                                <option value="#ff0">Yellow</option>
+                                <option value="#0f0">Green</option>
+                                <option value="#00f">Blue</option>
+                                <option value="#ffa500">Orange</option>
+                                <option value="#800000">Maroon</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <button onclick="drawtext();drawtext()" class="btn btn-dark">Set Text</button>
+                        </div>
+                    </div>
+                </div>
+                <br>
+
+                <div class="input-group mb-3">
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input"
+                            onchange="encodeImageFileAsURL(this);changefilename(this.id);" id="customimgfile">
+                        <label class="custom-file-label" id="customimglabel" for="customimgfile">Choose file</label>
+                    </div>
+                </div>
+                <div class="col" id="selectedElementImage" style="display:none">
+                    <img src="assets/images/index/4.JPG" width="50px" height="50px" alt="">
+                    <button type="button" class="btn btn-danger">Delete</button>
+                </div>
+                <div class="mt-3" id="selectedElementText">
+                    <button type="button" class="btn btn-dark" onclick="clearimg()">Remove Image</button>
+                    <button type="button" class="btn btn-dark" onclick="cleartext()">Remove Text</button>
+
+                </div>
+            </div>
+            <canvas id="textCanvas" width="640" height="60" hidden></canvas>
+            <div class="col-md-8">
+                <div class="" id="frontimg">
+                    <div id="frontcontainer" class="resize-container"
+                        style="background: url('./assets/images/blank_tees/front/white.jpg') no-repeat; background-size:400px 400px;">
+                        <div class="resize resize-drag-image-front" style="display:none">
+                            <img src="" id="dragimg-front" width="100%" class="resize-img" height="100%" alt="">
+                        </div>
+                        <div class="resize resize-drag-text-front">
+                            <img src="" height="100%" width="100%" id="image-front" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="" style="display:none" id="backimg">
+
+                    <div id="backcontainer" class="resize-container"
+                        style="background: url('./assets/images/blank_tees/back/white.jpg') no-repeat; background-size:400px 400px;">
+                        <div class="resize resize-drag-image-back">
+                            <img src="" id="dragimg-back" width="100%" class="resize-img" height="100%" alt="">
+                        </div>
+                        <div class="resize resize-drag-text-back">
+                            <img src="" height="100%" width="100%" id="image-back" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-2 mb-2 ml-5">
+                    <div class="btn-group" id="colorpick">
+                        <div class="color color-black" id="black" onclick="choosecolor(this.id);"></div>
+                        <div class="color color-blue" id="blue" onclick="choosecolor(this.id);"></div>
+                        <div class="color color-gold" id="gold" onclick="choosecolor(this.id);"></div>
+                        <div class="color color-green" id="green" onclick="choosecolor(this.id);"></div>
+                        <div class="color color-navy" id="navy" onclick="choosecolor(this.id);"></div>
+                        <div class="color color-orange" id="orange" onclick="choosecolor(this.id);"></div>
+                        <div class="color color-red" id="red" onclick="choosecolor(this.id);"></div>
+                        <div class="color color-white" id="white" onclick="choosecolor(this.id);"></div>
+                    </div>
+                </div>
+                <div class="row mt-3 mb-5">
+                    <div class="col">
+                        <h2>Price ₹ <span id="customprice">400</span></h2>
+                        <button type="button" class="btn btn-success" onclick="showcustombuy()">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer"></div>
+    <!-- Modal -->
+    <div class="modal fade" id="custombuy" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Customized</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body mb-3">
+                    <div class="container">
+                        <img id="frontshot" alt="Front" width="49%">
+                        <img id="backshot" alt="Back" width="49%">
+                        <div class="row">
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+
+                                Size:
+                                <select class="form-control" name="select" id="csize">
+                                    <option value="XS">X-Small</option>
+                                    <option value="S">Small</option>
+                                    <option value="M">Medium</option>
+                                    <option value="L">Large</option>
+                                    <option value="XL">X-Large</option>
+                                </select>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-4">
+                                Quantity:
+                                <input type="number" name="qty" id="cqty" value="1" class="form-control" min="1"
+                                    max="5">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-4">
+                                Unit Price:
+                                <input type="number" id="cprice" value="" disabled class="form-control">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="col">
+                            <button type="button" onclick="custombuynow()" class="btn btn-success"><span
+                                    class="glyphicon glyphicon-shopping-cart"></span>Buy Now</button>
+                        </div>
+                    </div>
+                    <div class="modal-footer mt-3"></div>
+                </div>
+            </div>
+        </div>
+        <script>initializetext();</script>
+</body>
+
+</html>

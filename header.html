@@ -1,0 +1,107 @@
+<html>
+<head>
+    
+</head>
+<body>
+
+    <div class="navs">
+        <div>
+            <!-- Image and text -->
+            <nav class="navbar navbar-light" style="background-color: rgb(196, 180, 147);">
+            
+                <a href="index.html" id="BrandName" class="navbar-brand" href="#">
+                    <img src="assets/images/logo.jpg" width="40" height="40" class="d-inline-block align-top" alt="">
+                <span  id="tagline">GRAFFITEE</span>    
+                </a>
+                <ul class="nav">
+                    <li class="dropdown" id="cartbutton">
+                        <span class="nav-link" id="navbarDropdown">
+                            <a href="cart.html" style="color: inherit; text-decoration: inherit;">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="badge badge-light" id="cartcount"></span>
+                        </a>
+                        </span>
+                    </li>
+                    <li class="dropdown">
+                        <span class="nav-link dropdown-toggle" id="navbarDropdown" data-toggle="dropdown"
+                            aria-expanded="false">
+                            <i class="fas fa-user"></i>
+                            <span id="useremail"></span>
+                        </span>
+
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" id="loginbutton" href="login.html">
+                                <i class="fas fa-sign-in-alt"></i>
+                                Login
+                            </a>
+                            <a class="dropdown-item" href="orders.html">
+                                <i class="fas fa-file-invoice"></i>
+                                Orders
+                            </a>
+                            <a class="dropdown-item" href="wishlist.html">
+                                <i class="fas fa-star"></i>
+                                Wishlist
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" id="logoutbutton" href="javascript: logout();">
+                                <i class="fas fa-sign-out-alt"></i>
+                                Logout
+                            </a>
+                        </div>
+                    </li>
+
+                </ul>
+            </nav>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a href="products.html#all" style="font-size: 20px;width:100px;text-align:center;font-family:sans-serif;"  class="nav-link">All<span
+                                class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="font-size: 20px;width: 100px;text-align: center;font-family:sans-serif;" href="products.html#men">Men</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="font-size: 20px;width: 100px;text-align: center;font-family:sans-serif;" href="products.html#women">Women</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="font-size: 20px;width: 130px;text-align: center;font-family:sans-serif;" href="products.html#kids">Children</a>
+                    </li>
+                    <li>
+                        <div class="dropdown">
+
+                            <a class="btn dropdown-toggle" class="nav-link" role="button" id="dropdownMenuLink"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                style="font-size: 20px;width: 100px;text-align: center;font-family:sans-serif;"  >
+                                Categories
+                            </a>
+
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <a class="dropdown-item"   href="products.html#festive">Festive</a>
+                                <a class="dropdown-item"  href="products.html#foodie">Foodie</a>
+                                <a class="dropdown-item" href="products.html#cartoon">Cartoon</a>
+                                <a class="dropdown-item" href="products.html#relations">Relations</a>
+                                <a class="dropdown-item" href="products.html#games">Games</a>
+                                <a class="dropdown-item" href="products.html#funky">Funky</a>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="nav-item" id = "a" >
+                        <a class="nav-link" style="font-size: 20px;width: 130px;text-align: center; margin-left: 50px;font-family:sans-serif;" href="customize.html">Customize</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</body>
+
+</html>

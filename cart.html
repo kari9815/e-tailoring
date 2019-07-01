@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>GRAFFITEE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oxygen:400,700">
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
+    <script src="assets/js/main.js"></script>
+</head>
+
+<body>
+    <div id="header"></div>
+    <div class="container mt-4 mb-5">
+        <div class="row">
+            <table class="table table-hover col-md-8">
+                <thead>
+                    <tr>
+                        <th scope="col-sm-2">&nbsp;</th>
+                        <th scope="col-sm-3">Product</th>
+                        <th scope="col-sm-2">Quantity</th>
+                        <th scope="col-sm-2">Unit Price</th>
+                        <th scope="col-sm-2">Total Price</th>
+                        <th scope="col-sm-1">Action</th>
+                    </tr>
+                </thead>
+                <tbody id="items">
+                    <!--
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>
+                    </td>
+                    <td id="price">0</td>
+                    <td>
+                    </td>
+                </tr>-->
+                </tbody>
+            </table>
+            <div class="col-md-4">
+                <table id="cartsummary" class="table ml-3">
+                    <thead>
+                        <th>Summary</th>
+                        <th></th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Subtotal</td>
+                            <td id="subtotal"></td>
+                        </tr>
+                        <tr>
+                            <td>Discount</td>
+                            <td id="discount"></td>
+                        </tr>
+                        <tr>
+                            <td>Shipping</td>
+                            <td id="shipping"></td>
+                        </tr>
+                        <tr>
+                            <td>Total</td>
+                            <td id="total"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>                   
+        <button type="button" class="btn btn-success" onclick="buycart();"><span class="fas fa-money-bill-alt"></span> Buy
+            Cart</button>
+    </div>
+    <div id="footer"></div>
+</body>
+
+</html>

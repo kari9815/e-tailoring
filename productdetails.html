@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>GRAFFITEE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oxygen:400,700">
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
+    <script src="assets/js/main.js"></script>
+</head>
+
+<body>
+    <div id="header"></div>
+    <br>
+    <div class="container" id="product_view">
+        <div class="row">
+            <div class="mt-3 col-md-4 product_img">
+                <img id="productimg" src="" width="100%" class="img-thumbnail mx-auto d-block">
+            </div>
+            <div class="col-md-5 col-sm-9 product_content mt-3 order-xs-1">
+                <h3 id="productname"></h3>
+                <h6>Product Id: <span id="productid"></span></h6>
+                <p id="productdesc"></p>
+                <h3 class="cost"><span class="fas fa-rupee-sign"></span> <span id="productprice"></span></h3>
+                <br>
+                <div class="row">
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <select id="productsize" class="form-control" name="select">
+                            <option value="invalid">Size</option>
+                            <option value="XS">X-Small</option>
+                            <option value="S">Small</option>
+                            <option value="M">Medium</option>
+                            <option value="L">Large</option>
+                            <option value="XL">X-Large</option>
+                        </select>
+                    </div>
+                    <!-- end col -->
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-sm-6 col-xs-12 col-md-4">
+                        Quantity:
+                        <input type="number" name="productqty" id="productqty" value="1" class="form-control" min="1"
+                            max="10">
+                    </div>
+                </div>
+                <br>
+                <div class="col">
+                    <button type="button"
+                        onclick="addtocart(document.getElementById('productsize').value,document.getElementById('productqty').value,document.getElementById('productid').innerHTML);"
+                        class="btn btn-secondary"><span class="fas fa-shopping-cart"></span> Add To Cart</button>
+                    <button type="button" class="btn btn-success" onclick="buynow(document.getElementById('productid').innerHTML,document.getElementById('productsize').value,document.getElementById('productqty').value);"><span class="fas fa-money-bill-alt"></span> Buy
+                        Now</button>
+                </div>
+            </div>
+            <div class="col-3 mt-2 order-xs-last">
+                <table id="recommendations" class="d-none d-sm-block d-md-block d-lg-block">
+                    <tr class="mb-2">
+                        <td>
+                            <a onclick="gotorecom(0001)">
+                                <img src="" height="80px" width="80px" alt=""
+                                    class="img-thumbnail" id="p1img">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr class="mb-2">
+                        <td>
+                            <a onclick="gotorecom(0002)">
+                                <img src="" height="80px" width="80px" alt=""
+                                    class="img-thumbnail" id="p2img">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr class="mb-2">
+                        <td>
+                            <a onclick="gotorecom(0003)">
+                                <img src="" height="80px" width="80px" alt=""
+                                    class="img-thumbnail" id="p3img">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr class="mb-2">
+                        <td>
+                            <a onclick="gotorecom(0004)">
+                                <img src="" height="80px" width="80px" alt=""
+                                    class="img-thumbnail" id="p4img">
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-md-6 offset-md-4 mt-4 order-xs-2">
+                <table>
+                    <tr>
+                        <th>Product Information : </th>
+                    </tr>
+                    <tr>
+                        <td id="fitting"></td>
+                    </tr>
+                    <tr>
+                        <td id="frm"></td>
+                    </tr>
+                    <tr>
+                        <td id="ideal"></td>
+                    </tr>
+                    <tr>
+                        <td id="material"></td>
+                    </tr>
+                    <tr>
+                        <td id="pack"></td>
+                    </tr>
+                    <tr>
+                        <td id="sleeves"></td>
+                    </tr>
+                    <tr>
+                        <td id="type"></td>
+                    </tr>
+                    <tr>
+                        <td id="wash"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <div id="footer"></div>
+</body>
+
+</html>

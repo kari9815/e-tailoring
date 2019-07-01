@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>GRAFFITEE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="assets/css/bootstrap.css">
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600,700">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oxygen:400,700">
+  <script src="assets/js/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
+  <script src="assets/js/bootstrap.js"></script>
+  <script src="assets/js/main.js"></script>
+</head>
+
+<body>
+  <div id="header"></div>
+  <br>
+  <br>
+  <div style="background-color: rgb(150, 107, 65);" id="form" class="container">
+    <h1 class="well">Registration Form</h1>
+    <br>
+    <div>
+      &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+      &nbsp;
+      &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+      &nbsp;
+      &nbsp &nbsp &nbsp &nbsp &nbsp;
+      <a href="javascript: facebooklogin();" class="btn btn-social-icon btn-lg btn-facebook"><i
+          class="fab fa-facebook-f"></i></a>
+      &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp;
+      <a href="javascript: googlelogin();" class="btn btn-social-icon btn-lg btn-google-plus"><i
+          class="fab fa-google-plus-g"></i></a>
+    </div>
+    <p class="divider-text">
+      <span class="bg-light">OR</span>
+    </p>
+    <br>
+    <div class="col-lg-12 well">
+      <div class="row">
+        <form onsubmit="if(document.getElementById('Password').value == document.getElementById('Confirm_Password').value){event.preventDefault(); register();}else{event.preventDefault(); alert('Password Does Not Match');}">
+          <div class="col-sm-12">
+            <div class="row">
+              <div class="col-sm-6 form-group">
+                <label>First_Name</label>
+                <input id="First_Name" name="First_Name" type="text" placeholder="Enter First Name Here.."
+                  class="form-control" required />
+              </div>
+              <div class="col-sm-6 form-group">
+                <label>Last_Name</label>
+                <input id="Last_Name" name="Last_Name" type="text" placeholder="Enter Last Name Here.."
+                  class="form-control" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Address</label>
+              <textarea id="Address" name="Address" placeholder="Enter Address Here.." rows="3"
+                class="form-control"></textarea>
+            </div>
+            <div class="row">
+              <div class="col-sm-4 form-group">
+                <label>City </label>
+                <input id="City" name="City" type="text" placeholder="Enter City Name Here.. " class="form-control" />
+              </div>
+              <div class="col-sm-4 form-group">
+                <label>State</label>
+                <input id="State" name="State" type="text" placeholder="Enter State Name Here.." class="form-control" />
+              </div>
+              <div class="col-sm-4 form-group">
+                <label>Zip</label>
+                <input id="Zip" name="Zip" type="text" placeholder="Enter Zip Code Here. " class="form-control" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Mobile_Number</label>
+              <input id="Mobile_Number" name="Mobile_Number" type="text" placeholder="Enter Mobile Number Here.."
+                class="form-control" />
+            </div>
+            <div class="form-group">
+              <label>Email_Address</label>
+              <input id="Email_Address" name="Email_Address" type="email" placeholder="Enter Email Address Here.."
+                class="form-control" required />
+            </div>
+            <div class="form-group">
+              <label>Password</label>
+              <input id="Password" name="Password" type="password" placeholder="Enter Password Here. "
+                class="form-control" required />
+            </div>
+            <div class="form-group">
+              <label>Confirm_Password</label>
+              <input id="Confirm_Password" name="Confirm_Password" type="password"
+                placeholder="Confirm Password Here.. " class="form-control" required />
+            </div>
+            <div>
+              <input type="checkbox" name="checkbox" value="check" id="agree" /> I have read and agree to the <a
+                href="terms.html">Terms and Conditions.</a>
+            </div>
+            <br>
+            <button type="Submit" class="btn btn-lg btn-info">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br><div id="footer"></div>
+  <!-- Footer -->
+  <script>
+    $('#SubNav').hide();
+    $('#BrandName').hover(function () {
+      $('#SubNav').show();
+    });
+    $('#Brand#SubNav').mouseout(function () {
+      $('#SubNav').hide();
+    });
+  </script>
+
+  <script>
+    $("#abtu").click(function () {
+      $('html, body').animate({
+        scrollTop: $("#abtu").offset().top
+      }, 5000);
+    });
+    $("#contu").click(function () {
+      $('html, body').animate({
+        scrollTop: $("#contu").offset().top
+      }, 5000);
+    });
+
+  </script>
+</body>
+
+</html>
+
